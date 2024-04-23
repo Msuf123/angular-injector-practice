@@ -5,10 +5,9 @@ import { routes } from './app.routes';
 import { MathsService } from './services/maths/maths.service';
 import { BetterMathsService } from './services/better-maths/better-maths.service';
 import { LoggerOperationsService } from './services/logger-service/logger-operations.service';
-import State from './services/factory-function/factory-function';
-export const token=new InjectionToken<number>('I will show number')
+export const token=new InjectionToken<string>('I will show number')
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes),{provide:MathsService,useClass:BetterMathsService},LoggerOperationsService,{provide:token,useFactory:State,deps:[MathsService]}]
+  providers: [provideRouter(routes),{provide:MathsService,useClass:BetterMathsService},LoggerOperationsService,{provide:token,useValue:'jack',multi:true},{provide:token,useValue:'jane',multi:true}]
 
 };

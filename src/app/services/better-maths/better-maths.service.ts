@@ -4,6 +4,7 @@ import { LoggerOperationsService } from '../logger-service/logger-operations.ser
 @Injectable()
 export class BetterMathsService {
   constructor(private loggerService:LoggerOperationsService){}
+  state=1
   addMethod(a:number,b:number){
     //Its better because we are logging the result
     this.loggerService.log(a+b)

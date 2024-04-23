@@ -21,13 +21,8 @@ export class AppComponent {
   })
   currentNumber:number=0
   addNumbers(){
-   const objNumber:any=this.inputAdd.value
-   this.currentNumber=0
-   console.log(this.inputAdd.value)
-   for(let i in objNumber){
-    console.log(Number(objNumber[i]))
-      this.currentNumber+=Number(objNumber[i])
-   }
+   const objNumber=this.inputAdd.value
+   this.currentNumber=this.maths.addMethod(Number(objNumber.a),Number(objNumber.b))
   }
   title = 'angular-injector-practice';
 }

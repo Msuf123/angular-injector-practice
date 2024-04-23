@@ -6,5 +6,5 @@ import { MathsService } from './services/maths/maths.service';
 import { BetterMathsService } from './services/better-maths/better-maths.service';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes),{provide:MathsService,useClass:BetterMathsService}]
+  providers: [provideRouter(routes),{provide:'Maths_Service',useClass:BetterMathsService}]
 };

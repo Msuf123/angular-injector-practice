@@ -1,4 +1,4 @@
-import { Component, Self, inject } from '@angular/core';
+import { Component, Inject, Self, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MathsService } from './services/maths/maths.service';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 })
 export class AppComponent {
   formBuilder=inject(FormBuilder)
-  constructor(private maths:MathsService){
+  constructor(@Inject('Maths_Service') private maths:MathsService){
   }
   inputAdd=this.formBuilder.group({
     a:[''],
